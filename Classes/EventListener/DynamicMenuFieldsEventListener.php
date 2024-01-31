@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace WEBcoast\EditableMenus\EventListener;
 
-use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Database\Event\AlterTableDefinitionStatementsEvent;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use WEBcoast\EditableMenus\Configuration\MenuConfiguration;
 
 class DynamicMenuFieldsEventListener
@@ -30,19 +28,6 @@ class DynamicMenuFieldsEventListener
                 $sqlData[] = sprintf('CREATE TABLE pages (%s int(11) DEFAULT NULL);', $menu . '_menu');
             }
         }
-
-//        $dynamicHeaderMenu = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('typo3_base_setup', 'dynamicHeaderMenu');
-//        $dynamicFooterMenu = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('typo3_base_setup', 'dynamicFooterMenu');
-
-//        if ($dynamicHeaderMenu || $dynamicFooterMenu) {
-//
-//            if ($dynamicHeaderMenu) {
-//            }
-//
-//            if ($dynamicFooterMenu) {
-//                $sqlData[] = sprintf('CREATE TABLE pages (%s int(11) DEFAULT NULL);', 'footer_menu');
-//            }
-//        }
 
         $event->setSqlData($sqlData);
     }
