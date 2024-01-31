@@ -1,0 +1,30 @@
+{
+    "name": "webcoast/editable-menus",
+    "description": "Menus editors can change easily in the backend",
+    "keywords": ["typo3", "cms", "menu", "menus", "editors", "dynamic"],
+    "type": "typo3-cms-extension",
+    "minimum-stability": "dev",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Thorben Nissen",
+            "email": "thorben@webcoast.dk"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^12.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "WEBcoast\\EditableMenus\\": "Classes"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        },
+        "typo3/cms": {
+            "extension-key": "editable_menus"
+        }
+    }
+}

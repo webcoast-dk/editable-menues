@@ -1,0 +1,17 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+        
+
+    WEBcoast\EditableMenus\:
+       resource: '../Classes'
+       
+    WEBcoast\EditableMenus\Configuration\MenuConfiguration:
+       public: true
+       
+    WEBcoast\EditableMenus\EventListener\DynamicMenuFieldsEventListener:
+        tags:
+            - name: event.listener
+              identifier: editable-menues_fields_listener
